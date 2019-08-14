@@ -8,7 +8,7 @@
     <name>Simple Multi Modules Build</name>
 
     <modules>
-        <module>multi1</module>
+       <module>multi1</module>
         <module>multi2</module>
         <module>multi3</module>
     </modules>
@@ -20,13 +20,25 @@
     </properties>
 
     <dependencies>
-        <dependency>
+      <!--  <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
-        </dependency>
+        </dependency> -->
+<dependency>
+
+			<groupId>com.fasterxml.jackson.core</groupId>
+
+			<artifactId>jackson-databind</artifactId>
+
+			<version>2.9.9</version>
+
+		</dependency>
+
+
     </dependencies>
+
 
     <build>
         <pluginManagement>
@@ -40,11 +52,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>2.4</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>2.1.2</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -69,4 +76,12 @@
             </plugin>
         </plugins>
     </build>
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>Ubuntu-snapshots</name>
+        <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+</distributionManagement>
+
 </project>
